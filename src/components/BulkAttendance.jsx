@@ -49,7 +49,7 @@ function BulkAttendance({ students }) {
     async () => {
 
       await axios.post(
-        "http://localhost:8080/api/attendance/bulk",
+          "https://attendencemanagement-backend-4.onrender.com/api/attendance/bulk",
         {
           studentIds:
             selectedStudents,
