@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api";
+const API_URL = "https://attendencemanagement-backend-4.onrender.com/api";
 
 // Student APIs
 export const getStudents = () =>
@@ -22,15 +22,10 @@ export const getAttendanceByStudent = (studentId) =>
 export const getAttendanceByDate = (date) =>
   axios.get(`${API_URL}/attendance/date/${date}`);
 
-// Bulk Attendance API
 export const markBulkAttendance = (attendanceData) =>
   axios.post(`${API_URL}/attendance/bulk`, attendanceData);
 
-// Export Attendance Excel API
 export const exportAttendanceExcel = (date) =>
-  axios.get(
-    `${API_URL}/attendance/export/${date}`,
-    {
-      responseType: "blob",
-    }
-  );
+  axios.get(`${API_URL}/attendance/export/${date}`, {
+    responseType: "blob",
+  });
